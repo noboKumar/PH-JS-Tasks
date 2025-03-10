@@ -33,3 +33,8 @@ class Person {
 const john = new Person("john", 22, "single");
 john.status();
 console.log(john);
+
+greet(); // TypeError: greet is not a function
+let greet = function() {
+    console.log("Hi!");
+};
