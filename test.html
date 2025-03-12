@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="user-container"></div>
+    <button onclick="loadUser()">Click To show Users</button>
+    <script>
+      const loadUser = () => {
+        fetch("https://jsonplaceholder.typicode.com/users")
+          .then((response) => response.json())
+          .then((data) => showUser(data));
+      };
+
+      const showUser = (users) => {
+        const userContainer = document.getElementById("user-container");
+        for (const user of users) {
+          const li = document.createElement("li");
+          li.innerText = user.name;
+          userContainer.appendChild(li);
+        }
+      };
+    </script>
+  </body>
+</html>
