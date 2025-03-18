@@ -1,3 +1,10 @@
+
+
+const loadData = () => {
+  fetch("https://jsonplaceholder.typicode.com/todos/1")
+};
+loadData();
+
 const fetchData = async () => {
   try {
     let response = await fetch(
